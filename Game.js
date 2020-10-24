@@ -133,7 +133,7 @@ export default class Game {
                     this.stateCur = GameState.OVER;
                 }
                 
-                else if(sInput.toLowerCase().match("rope")){
+                else if(sInput.toLowerCase().match("ladder")){
                     sReply = "You manage to climb down the ladder and exit the house! As you leave you hear a voice say 'HAPPY HALLOWEEN'... \n YOU WIN!";
                     this.stateCur = GameState.OVER;
                 }
