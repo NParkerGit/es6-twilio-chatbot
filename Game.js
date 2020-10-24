@@ -98,7 +98,7 @@ export default class Game {
                     this.stateCur = GameState.OVER;
 
                 }
-                if(sInput.toLowerCase().match("grab")){
+                else if(sInput.toLowerCase().match("grab")){
                     sReply = "You were saved and the guy just vanishes in front of you. He leaves you a map to the exit. Do you follow the MAP or KEEP walking around to find the exit?";
                     this.stateCur = GameState.UPSTAIRS;
                 }
