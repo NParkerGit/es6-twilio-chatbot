@@ -53,7 +53,7 @@ export default class Game {
                     this.stateCur = GameState.BANG;
 
                 }else{
-                    sReply = "Nobody seems to answer.... Do you KEEP walking or go INVESTIGATE?";
+                    sReply = "Nobody seems to answer, and you hear a bang!.... Do you KEEP walking or go INVESTIGATE?";
                     this.stateCur = GameState.BANG;
 
                 }
