@@ -30,7 +30,7 @@ export default class Game {
                     sReply ="The door seems to be open and swaying. Do you KNOCK to see if anybody is home or just ENTER?";
                     this.stateCur = GameState.HOUSE;
                 }else{
-                    sReply = "The dog catches up to you and starts gnawing your leg...GAME OVER!";
+                    sReply = "The dog catches up to you and starts gnawing your leg... \n GAME OVER!";
                     this.stateCur = GameState.OVER;
                 }
                 break;
@@ -58,9 +58,9 @@ export default class Game {
 
                 }
                 break;
-                case GameState.BANG:
+            case GameState.BANG:
                 if(sInput.toLowerCase().match("investigate")){
-                    sReply = "You see someone standing in the kitchen. 'Happy Halloween' he says and walks towards you. GAME OVER!";
+                    sReply = "You see someone standing in the kitchen with a knife. 'Happy Halloween' he says and walks towards you... \n GAME OVER!";
                     this.stateCur = GameState.OVER;
 
                 }else{
@@ -69,9 +69,9 @@ export default class Game {
     
                 }
                 break;
-                case GameState.MOUSE:
+            case GameState.MOUSE:
                 if(sInput.toLowerCase().match("kitchen")){
-                    sReply = "You see someone standing in the kitchen. 'Happy Halloween' he says and walks towards you. GAME OVER!";
+                    sReply = "You see someone standing in the kitchen with a knife. 'Happy Halloween' he says and walks towards you... \n GAME OVER!";
                     this.stateCur = GameState.OVER;
 
                 }else{
@@ -79,9 +79,9 @@ export default class Game {
                     this.stateCur = GameState.STAIRS;
                 }
                 break;
-                case GameState.STAIRS:
+            case GameState.STAIRS:
                 if(sInput.toLowerCase().match("keep")){
-                    sReply = "You fall down the stairs and break everything... GAME OVER!";
+                    sReply = "You fall down the stairs and break everything... \n GAME OVER!";
                     this.stateCur = GameState.OVER;
 
                 }else{
@@ -89,9 +89,9 @@ export default class Game {
                     this.stateCur = GameState.UPSTAIRS;
                 }
                 break;
-                case GameState.UPSTAIRS:
+            case GameState.UPSTAIRS:
                 if(sInput.toLowerCase().match("map")){
-                    sReply = "You walk into a room and get trapped, It's Him!! ... GAME OVER!";
+                    sReply = "You walk into a room and get trapped, It's Him!!... \n GAME OVER!";
                     this.stateCur = GameState.OVER;
 
                 }else{
@@ -100,28 +100,21 @@ export default class Game {
                 }
                 break;
 
-                case GameState.OVER:
+            case GameState.OVER:
                 sReply = "Type to Play Again";
                 this.stateCur=GameState.WELCOMING;
                 break;
 
-                case GameState.EXIT:
+            case GameState.EXIT:
                 if(sInput.toLowerCase().match("rope")){
-                    sReply = "As you climb down the rope snaps! ... GAME OVER!";
+                    sReply = "As you climb down the rope snaps!... \n GAME OVER!";
                     this.stateCur = GameState.OVER;
 
                 }else{
-                    sReply = "You manage to exit the house! As you leave you hear a voice say 'HAPPY HALLOWEEN' and laugh...GAME OVER";
+                    sReply = "You manage to exit the house! As you leave you hear a voice say 'HAPPY HALLOWEEN'... \n YOU WIN!";
                     this.stateCur = GameState.OVER;
                 }
                 break;
-            // case GameState.n:
-            //     if(sInput.toLowerCase().match("BANG")){
-            //         sReply = "you enter a new world of adventure ... game over";
-            //         this.stateCur = GameState.WELCOMING;
-            //     }else{
-            //         sReply = "the phone lines are down ... Would you like some BANG perhaps?";
-            //     }
         }
         return([sReply]);
     }
